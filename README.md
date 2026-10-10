@@ -18,7 +18,7 @@ On Windows PowerShell, compile with:
 
 ```powershell
 Get-ChildItem -Recurse src/main/java -Filter *.java | ForEach-Object { $_.FullName } | Set-Content sources.txt
-javac -d out @sources.txt
+javac -d out (Get-Content sources.txt)
 java -cp out com.ridewise.app.Main
 ```
 
